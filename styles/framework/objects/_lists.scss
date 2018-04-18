@@ -1,0 +1,78 @@
+.o-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.o-list--divider {
+    > .o-list__item:not(:first-child) {
+        border-top: 1px solid $haze-200;
+    }
+
+    &.is--darker-divider > .o-list__item:not(:first-child) {
+        border-top-color: darken($haze-200, 5%);
+    }
+}
+
+.o-list--divider-darker > .o-list__item:not(:first-child) {
+    border-top: 1px solid $haze-300;
+}
+
+
+
+
+@mixin list-setup($size, $breakpoint: 'global') {
+
+    $spacing: '';
+    $breakpoint-separator: \@ !default;
+
+
+    @if $breakpoint == 'global' {
+        $breakpoint-separator: '';
+        $breakpoint: '';
+    }
+
+
+    @if $size == 'xl' {
+        $spacing: $spacing-xl;
+    }
+
+    @if $size == 'lg' {
+        $spacing: $spacing-lg;
+    }
+
+    @if $size == 'md' {
+        $spacing: $spacing-md;
+    }
+
+    @if $size == 'sm' {
+        $spacing: $spacing-sm;
+    }
+
+    @if $size == 'xs' {
+        $spacing: $spacing-xs;
+    }
+
+    .o-list--#{$size}#{$breakpoint-separator}#{$breakpoint} {
+        > .o-list__item:not(:first-child) {
+            margin-top: $spacing;
+        }
+
+        &.o-list--divider > .o-list__item:not(:first-child) {
+            padding-top: $spacing;
+        }
+    }
+}
+
+
+@include list-setup('lg');
+@include list-setup('md');
+@include list-setup('sm');
+
+@if responsive {
+    @include media-query('mobile') {
+        @include list-setup('lg', 'mobile');
+        @include list-setup('md', 'mobile');
+        @include list-setup('sm', 'mobile');
+    }
+}

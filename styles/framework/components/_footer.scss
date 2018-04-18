@@ -1,0 +1,17 @@
+.c-footer {
+    background-color: #555555;
+    color: $white;
+
+    a, h5 {
+        color: $white;
+
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+
+.c-footer__copyright {
+    background-color: #444444;
+}

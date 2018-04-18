@@ -1,0 +1,51 @@
+.c-rating {
+    color: $haze-300;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: top;
+    white-space: nowrap;
+
+    .icon {
+        display: inline-block;
+        font-size: 18px;
+        line-height: 1em;
+        vertical-align: top;
+    }
+}
+
+    .c-rating--sm {
+        .icon {
+            font-size: 14px;
+        }
+    }
+
+    .c-rating__value {
+        color: $rating-color-active;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+    }
+
+
+
+
+.c-rating-bar {
+    background: $haze-200;
+    border-radius: 2px;
+    height: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+    .c-rating-bar__bar {
+        background-color: $rating-color-active;
+        border-radius: 2px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }

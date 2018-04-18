@@ -1,0 +1,28 @@
+/*
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: $font-mono-family;
+    font-size: 1em;
+}
+
+code {
+    &.code-hilight {
+        background: $red-100;
+        color: $red-600;
+    }
+}
+
+/*
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    background: $haze-200;
+    padding: $spacing-md;
+    white-space: pre-wrap;
+}

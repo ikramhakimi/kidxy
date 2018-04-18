@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+a {
+    color: $font-link-color;
+    cursor: pointer;
+    text-decoration: none;
+}
+/*
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: none !important;
+}
+
+/*
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+    text-decoration: underline;
+}

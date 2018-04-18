@@ -1,0 +1,96 @@
+.o-grid {
+    clear: both;
+    font-size: 0;
+    list-style: none;
+    margin: 0 (-$spacing-md/2);
+    margin-bottom: 0;
+
+    @include clearfix();
+}
+
+    .o-grid__item {
+        box-sizing: border-box;
+        display: inline-block;
+        font-size: $font-base-size;
+        padding: 0 $spacing-md/2;
+        vertical-align: top;
+    }
+
+
+.o-grid--scrollable {
+    white-space: nowrap;
+    overflow-x: auto;
+
+    > .o-grid__item {
+        white-space: normal;
+
+        > .c-card {
+            margin-bottom: 1px;
+        }
+    }
+}
+
+
+@mixin grid-setup($size, $breakpoint: 'global') {
+
+    $spacing: '';
+    $breakpoint-separator: \@ !default;
+
+
+    @if $breakpoint == 'global' {
+        $breakpoint-separator: '';
+        $breakpoint: '';
+    }
+
+
+    @if $size == 'xl' {
+        $spacing: $spacing-xl;
+    }
+
+    @if $size == 'lg' {
+        $spacing: $spacing-lg;
+    }
+
+    @if $size == 'md' {
+        $spacing: $spacing-md;
+    }
+
+    @if $size == 'sm' {
+        $spacing: $spacing-sm;
+    }
+
+    @if $size == 'xs' {
+        $spacing: $spacing-xs;
+    }
+
+    @if $size == 'none' {
+        $spacing: 0;
+    }
+
+    .o-grid--#{$size}#{$breakpoint-separator}#{$breakpoint} {
+        margin: 0 (-$spacing/2);
+
+        > .o-grid__item {
+            padding: 0 $spacing/2;
+        }
+    }
+}
+
+
+@include grid-setup('xl');
+@include grid-setup('lg');
+@include grid-setup('md');
+@include grid-setup('sm');
+@include grid-setup('xs');
+@include grid-setup('none');
+
+
+@if $responsive {
+    @include media-query('mobile') {
+        // @include grid-setup('lg','mobile');
+        @include grid-setup('md','mobile');
+        @include grid-setup('sm','mobile');
+        @include grid-setup('xs','mobile');
+        @include grid-setup('none','mobile');
+    }
+}

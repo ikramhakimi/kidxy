@@ -1,0 +1,123 @@
+$menu-sm-height         : 24px;
+$menu-md-height         : 40px;
+
+
+.o-menu {
+    @include clearfix();
+    font-size: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    > li {
+        display: inline-block;
+        font-size: $font-base-size;
+        vertical-align: middle;
+        position: relative;
+
+        &:not(:first-child) {
+            margin-left: $spacing-lg;
+        }
+
+        > a:not(.c-btn) {
+            display: block;
+            line-height: $menu-md-height;
+            outline: none !important;
+            text-decoration: none !important;
+        }
+
+        &.is--active {
+            > a {
+                color: $font-base-color;
+                font-weight: $font-weight-semibold;
+            }
+        }
+
+        &.is--disabled > a:not(.c-btn) {
+            color: $font-muted-color !important;
+        }
+    }
+
+    &.has--separator {
+        > li:not(:first-child) {
+            border-left: 1px solid $haze-300;
+            padding-left: $spacing-lg;
+        }
+    }
+}
+
+
+.o-menu--sm {
+    > li {
+        &:not(:first-child) {
+            margin-left: $spacing-md;
+        }
+    }
+
+    &.has--separator {
+        > li:not(:first-child) {
+            padding-left: $spacing-md;
+        }
+    }
+}
+
+
+
+//
+//
+// .o-menu--lg {
+//     line-height: $menu-lg-height;
+// }
+//
+// .o-menu--sm {
+//     line-height: $menu-sm-height;
+//
+//     > li:not(:first-child) {
+//         margin-left: $spacing-md;
+//     }
+//
+//     &.has--separator > li:not(:first-child) {
+//         padding-left: $spacing-md;
+//     }
+// }
+//
+//
+// .o-menu--xs {
+//     line-height: $menu-xs-height;
+//
+//     > li {
+//         &:not(:first-child) {
+//             margin-left: $spacing-md;
+//         }
+//
+//         > a {
+//             font-size: $font-7-size;
+//         }
+//     }
+//
+//     &.has--separator > li:not(:first-child) {
+//         padding-left: $spacing-md;
+//     }
+//
+//     .o-menu__divider {
+//         height: $menu-xs-height;
+//     }
+// }
+//
+//
+//
+// .o-menu--left {
+//     float: left;
+// }
+//
+// .o-menu--right {
+//     float: right;
+//
+//     .c-dropdown {
+//         @extend .c-dropdown--right;
+//     }
+// }
+//
+// .o-menu--center {
+//     text-align: center;
+// }

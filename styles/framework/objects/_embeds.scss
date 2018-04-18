@@ -1,0 +1,151 @@
+/*
+ *
+
+<div class="o-embed  o-embed--[type]  o-embed--[ratio]">
+    [content: img, embed, iframe, object, video]
+</div>
+
+ *
+ */
+
+.o-embed {
+    background-color: $haze-300;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    min-width: 20px;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+
+    img,
+    embed,
+    iframe,
+    object,
+    video {
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+
+.o-embed--shade::after {
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba($dark-700,.4) 40%,rgba($dark-700,1) 100%);
+    bottom: 0;
+    content: '';
+    display: block;
+    left: 0;
+    padding-top: 75%;
+    position: absolute;
+    right: 0;
+}
+
+.o-embed--transparent {
+    background-color: transparent;
+}
+
+
+
+
+@mixin embed-ratio($breakpoint: 'global') {
+
+    $spacing: '';
+    $breakpoint-separator: \@ !default;
+
+
+    @if $breakpoint == 'global' {
+        $breakpoint-separator: '';
+        $breakpoint: '';
+    }
+
+
+    .o-embed--1x1#{$breakpoint-separator}#{$breakpoint}:before {
+        padding-top: 100%;
+    }
+
+    .o-embed--4x3#{$breakpoint-separator}#{$breakpoint}:before {
+        padding-top: 75%;
+    }
+
+    .o-embed--16x9#{$breakpoint-separator}#{$breakpoint}:before {
+        padding-top: 56.25%;
+    }
+}
+
+
+@mixin embed-width($breakpoint: 'global') {
+
+    $breakpoint-separator: \@ !default;
+
+
+    @if $breakpoint == 'global' {
+        $breakpoint-separator: '';
+        $breakpoint: '';
+    }
+
+    .o-embed--xxl#{$breakpoint-separator}#{$breakpoint} {
+        width: 280px;
+    }
+
+    .o-embed--xl#{$breakpoint-separator}#{$breakpoint} {
+        width: 200px;
+    }
+    .o-embed--lg#{$breakpoint-separator}#{$breakpoint} {
+        width: 148px;
+    }
+    .o-embed--md#{$breakpoint-separator}#{$breakpoint} {
+        width: 100px;
+    }
+    .o-embed--sm#{$breakpoint-separator}#{$breakpoint} {
+        width: 76px;
+    }
+    .o-embed--xs#{$breakpoint-separator}#{$breakpoint} {
+        width: 52px;
+    }
+}
+
+
+
+
+@include embed-ratio();
+@include embed-width();
+
+
+@if $responsive {
+    @include media-query('mobile') {
+        @include embed-ratio('mobile');
+        @include embed-width('mobile');
+    }
+}
+
+
+
+
+// .o-embed--video,
+// .o-embed--image {
+//     &:before {
+//         @include font-icon();
+//         font-size: 32px;
+//         margin-top: -20px;
+//         line-height: 40px;
+//     }
+// }
+//
+// .o-embed--image::before {
+//     content: "\e90e";
+// }
+//
+.o-embed--video {
+    background-color: $dark-600;
+}

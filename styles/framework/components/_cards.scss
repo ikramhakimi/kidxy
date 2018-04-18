@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Card
+   ========================================================================== */
+
+/**
+ * Cards are flexible content containers.
+ */
+
+$card-spacing-horizontal        : 16px;
+$card-spacing-vertical          : 16px;
+
+
+.c-card {
+    background-color: $white;
+    border-radius: $base-radius;
+    position: relative;
+    box-shadow: 0 0 0 1px lighten($line-primary, 10%);
+
+    .is--filled {
+        background-color: $haze-100;
+        padding: $card-spacing-vertical $card-spacing-horizontal;
+    }
+}
+
+    .c-card__image,
+    .c-card__head,
+    .c-card__body,
+    .c-card__action {
+        padding-top: $card-spacing-vertical;
+        @include clearfix();
+    }
+
+    .c-card__head,
+    .c-card__body,
+    .c-card__action {
+        padding-left: $card-spacing-horizontal;
+        padding-right: $card-spacing-horizontal;
+
+        &:last-child {
+            padding-bottom: $card-spacing-vertical;
+        }
+    }
+
+    .c-card__image {
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+
+    .c-card__head:first-child,
+    .c-card__image:first-child img{
+        border-top-left-radius: $base-radius;
+        border-top-right-radius: $base-radius;
+    }
+
+    .c-card__action:last-child,
+    .c-card__image:last-child img {
+        border-bottom-left-radius: $base-radius;
+        border-bottom-right-radius: $base-radius;
+    }
+
+
+
+
+.c-card--dark {
+    background-color: $dark-700;
+    color: $haze-500;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $haze-300;
+    }
+
+    a:not(.c-btn) {
+        color: $blue-400;
+    }
+
+    .c-btn--secondary-outline {
+        border-color: $dark-400;
+        background-color: transparent;
+        color: $haze-300;
+
+        &:hover {
+            color: $dark-400;
+            background-color: $haze-300;
+        }
+    }
+
+    .u-color-muted {
+        color: $dark-100;
+    }
+}
+
+
+.c-card--outline-grey {
+    box-shadow: 0 0 0 1px #B1B1B1;
+}

@@ -1,0 +1,377 @@
+/**
+ * Element: Input
+ */
+
+.c-input {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: $input-background;
+    border: 1px solid $input-border-color;
+    border-radius: $input-radius-size;
+    color: $input-font-color;
+    font-family: $input-font-family;
+    font-size: $input-font-size;
+    height: $input-height;
+    line-height: $input-font-height;
+    padding: ($input-padding-vertical - 1) $input-padding-horizontal ($input-padding-vertical + 1);
+    transition: border-color ease-in-out $input-transition-time;
+    vertical-align: top;
+    width: 100%;
+
+
+    &::-webkit-input-placeholder {
+        color: $input-placholder-font-color;
+        font-weight: 400;
+    }
+    &::-moz-placeholder {
+        color: $input-placholder-font-color;
+        font-weight: 400;
+    }
+    &:-ms-input-placeholder {
+        color: $input-placholder-font-color;
+        font-weight: 400;
+    }
+    &:-moz-placeholder {
+        color: $input-placholder-font-color;
+        font-weight: 400;
+    }
+
+
+    &:hover {
+        border-color: $input-hover-border-color;
+    }
+}
+
+
+
+
+/**
+ * Width
+ */
+.c-input--auto {
+    width: auto;
+}
+
+.c-input--underline {
+    box-shadow: none !important;
+    border-radius: 0;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    border-top-color: transparent !important;
+    padding-left: $spacing-sm !important;
+    padding-right: $spacing-sm !important;
+}
+
+
+
+/**
+ * Sizes
+ */
+
+.c-input--sm {
+    height: $input-sm-height;
+    padding: $input-sm-padding-vertical $input-sm-padding-horizontal;
+}
+
+.c-input--lg {
+    font-size: $input-lg-font-size + 4;
+    line-height: $input-lg-font-height;
+    height: $input-lg-height;
+    padding: $input-lg-padding-vertical $input-lg-padding-horizontal;
+}
+
+
+
+
+/**
+ * Element: Textarea
+ */
+
+textarea.c-input {
+    height: auto;
+    resize: vertical;
+
+    &[rows="1"] {
+        height: $input-height;
+    }
+}
+
+
+
+
+/**
+ * Element: Select
+ */
+ 
+select.c-input {
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyMHB4IiBoZWlnaHQ9IjEycHgiIHZpZXdCb3g9IjAgMCAyMCAxMiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5TaGFwZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz48L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9ImNoZXZyb24tZG93biIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjNTU1NTU1Ij4gICAgICAgICAgICA8cG9seWdvbiBpZD0iU2hhcGUiIHBvaW50cz0iMS43MTg3NSAwLjc4MTI1IDAuMjgxMjUgMi4yMTg3NSA5LjI4MTI1IDExLjIxODc1IDEwIDExLjkwNjI1IDEwLjcxODc1IDExLjIxODc1IDE5LjcxODc1IDIuMjE4NzUgMTguMjgxMjUgMC43ODEyNSAxMCA5LjA2MjUiPjwvcG9seWdvbj4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==');
+    background-position: right 12px top 50%;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    padding-right: 32px;
+}
+
+select[multiple].c-input {
+    background-image: none;
+    height: auto;
+    padding: 0;
+    padding: $input-padding-vertical/2 $input-padding-horizontal/2;
+
+    option {
+        padding: $input-padding-vertical/2 $input-padding-horizontal/2;
+    }
+}
+
+
+
+
+/**
+ * Element: Checkbox & Radio
+ */
+
+.c-check,
+.c-switch {
+    display: block;
+    color: $font-base-color;
+    font-size: $input-font-size;
+    line-height: $font-base-height;
+    margin: ($input-height - $input-font-height)/2 0;
+    position: relative;
+    min-height: $font-base-height;
+
+    > label {
+        display: block;
+        margin: 0;
+        padding-left: $input-check-size + $spacing-md;
+        position: relative;
+        user-select: none;
+        z-index: 2;
+    }
+
+    > input {
+        -webkit-appearance: none;
+        border: 1px solid $input-border-color;
+        display: inline-block;
+        height: $input-check-size;
+        left: 0;
+        outline: none !important;
+        position: absolute;
+        vertical-align: top;
+        z-index: 1;
+        top: ($font-base-height - $input-check-size)/2 - 1;
+        transition: all ease-in-out $input-transition-time;
+    }
+}
+
+.c-check {
+    > input {
+        background-color: $white;
+        border-radius: $base-radius;
+        color: transparent;
+        text-align: center;
+        width: $input-check-size;
+
+        &:before {
+            display: inline-block;
+            font-size: $font-7-size;
+            line-height: $input-check-size - 2;
+            transform: scale(0) rotate(90deg);
+            transition: transform ease-in-out $input-transition-time;
+            vertical-align: top;
+            width: 100%;
+        }
+    }
+
+    &:hover > input {
+        border-color: $input-hover-border-color;
+    }
+
+
+    // Checkbox
+    > input[type="checkbox"]{
+        &:before {
+            @extend .icon;
+            @extend .icon--check;
+            margin: auto;
+        }
+
+        &:checked {
+            background: $input-focus-border-color;
+            border-color: $input-focus-border-color;
+            color: $white;
+
+            &:before {
+                transform: scale(1) rotate(0);
+            }
+        }
+    }
+
+
+    // Radio
+    > input[type="radio"] {
+        border-radius: 100%;
+
+        &:checked {
+            border-width: 6px;
+            border-color: $input-focus-border-color;
+        }
+    }
+}
+
+
+.c-check--static {
+    margin: 0;
+
+    > input {
+        position: static;
+    }
+}
+
+.c-check-inline {
+    @extend .u-clearfix;
+
+    .c-check {
+        float: left;
+        margin-right: $spacing-xl;
+    }
+}
+
+
+
+
+/**
+ * Element: Switch
+ */
+
+$form-switch-width          : ($input-check-size*2) - 4;
+$form-switch-height         : $input-check-size;
+$form-switch-circle-size    : $form-switch-height - 2;
+
+.c-switch {
+    > label {
+        padding-left: $form-switch-width + $spacing-md;
+    }
+
+    > input[type="checkbox"]{
+        background-color: $haze-300;
+        border-radius: 100px;
+        width: $form-switch-width;
+        top: 0;
+
+        &:before {
+            background-color: $white;
+            border-radius: 100px;
+            content: '';
+            display: block;
+            height: $form-switch-circle-size;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: $form-switch-circle-size;
+            transition: left ease $input-transition-time;
+        }
+
+        &:checked {
+            background: $input-focus-border-color;
+            border-color: $input-focus-border-color;
+
+            &:before {
+                left: ($form-switch-width - 2) - $form-switch-circle-size;
+            }
+        }
+
+        &:disabled {
+            background-color: $haze-200;
+            border-color: transparent;
+        }
+    }
+}
+
+
+.c-switch--right {
+    > label {
+        padding-left: 0;
+        padding-right: $form-switch-width + $spacing-md;
+    }
+
+    > input {
+        left: auto;
+        right: 0;
+    }
+}
+
+
+
+
+/**
+ * States: Disabled
+ */
+
+@mixin input-disabled {
+    background-color: $input-disabled-background !important;
+    border-color: $input-disabled-border !important;
+    color: $font-muted-color !important;
+    cursor: default;
+}
+
+.c-input:disabled,
+.c-input[readonly],
+.c-check  > input:disabled,
+.c-check  > input:disabled:checked {
+    @include input-disabled;
+}
+
+.c-input[readonly],
+.c-check > input:disabled ~ label {
+    cursor: default;
+}
+
+
+
+
+/**
+ * States: Focus
+ */
+
+.c-input,
+.c-check  > input {
+    &:focus {
+        border-color: $input-focus-border-color !important;
+        box-shadow: 0 0 0 2px rgba($input-focus-border-color, .2);
+        outline: none !important;
+    }
+}
+
+
+
+
+/**
+ * Fieldset
+ */
+
+.c-field {
+    margin-bottom: $spacing-md;
+}
+
+.c-field__message {
+    color: $font-muted-color;
+    font-size: $font-7-size;
+    margin-top: $spacing-xs;
+}
+
+
+
+
+/**
+ * Field States: Negative
+ */
+
+.c-field--error {
+    .c-input {
+        border-color: $input-error-border-color;
+    }
+
+    .c-field__message {
+        color: $input-error-font-color;
+    }
+}

@@ -1,0 +1,47 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width:100%;
+}
+
+th,
+td {
+    padding: 16px 12px;
+    text-align: left;
+    vertical-align: top;
+
+    &.is--tight {
+        width: 1px;
+        white-space: nowrap;
+    }
+
+    &[valign="middle"] {
+        vertical-align: middle;
+    }
+
+    &[valign="bottom"] {
+        vertical-align: bottom;
+    }
+}
+
+
+thead {
+    background-color: $color-primary-smoke;
+
+    th,
+    td {
+        font-size: $font-7-size;
+        padding-bottom: $spacing-sm;
+        padding-top: $spacing-sm;
+    }
+}
+
+
+tbody {
+    tr:not(:last-child) {
+        th,
+        td {
+            border-bottom: 1px solid $color-primary-smoke;
+        }
+    }
+}

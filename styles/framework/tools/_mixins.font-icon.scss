@@ -1,0 +1,15 @@
+/*
+ *  Font Icons
+ *
+ *  Shorthand to implement font icon
+ *
+    @include hidden();
+ */
+
+@mixin font-icon {
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

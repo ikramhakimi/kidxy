@@ -1,0 +1,30 @@
+.u-hover-shadow-1dp,
+.u-hover-shadow-2dp,
+.u-hover-shadow-3dp,
+.u-hover-shadow-4dp {
+    transition: all ease .4s;
+}
+
+.u-shadow-none {
+    @include shadow-none();
+}
+
+.u-shadow-1dp,
+.u-hover-shadow-1dp:hover {
+    @include shadow-1dp();
+}
+
+.u-shadow-2dp,
+.u-hover-shadow-2dp:hover {
+    @include shadow-2dp();
+}
+
+.u-shadow-3dp,
+.u-hover-shadow-3dp:hover {
+    @include shadow-3dp();
+}
+
+.u-shadow-4dp,
+.u-hover-shadow-4dp:hover {
+    @include shadow-4dp();
+}

@@ -1,0 +1,70 @@
+@import '../vendor/owl.carousel/assets';
+
+
+.c-carousel {
+    position: relative;
+
+    .c-card {
+        margin: 1.25px;
+    }
+
+    .owl-nav  > button,
+    .owl-dots > button {
+        border: 0;
+        padding: 0;
+        outline: none !important;
+
+        span {
+            display: none;
+        }
+    }
+
+    .owl-nav > button {
+        background-color: transparent;
+        color: $font-base-color;
+        text-align: center;
+
+        &:before {
+            @extend .icon;
+            color: inherit;
+            font-size: 24px;
+            margin: auto;
+        }
+    }
+
+    .owl-prev {
+        float: left;
+
+        &:before {
+            @extend .icon--chevron-left;
+        }
+    }
+
+    .owl-next {
+        float: right;
+
+        &:before {
+            @extend .icon--chevron-right;
+        }
+    }
+
+    .owl-dots {
+        text-align: center;
+
+        > button {
+            background-color: $haze-300;
+            border-radius: 100%;
+            height: 8px;
+            width: 8px;
+            margin: 8px $spacing-xs;
+
+            &:hover {
+                background-color: $haze-400;
+            }
+
+            &.active {
+                background-color: $haze-600;
+            }
+        }
+    }
+}

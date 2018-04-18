@@ -1,0 +1,40 @@
+.c-pagination {
+    background-color: $white;
+    border: 1px solid $line-primary;
+    border-radius: $base-radius;
+    display: inline-flex;
+    flex: 1;
+    align-self: center;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+
+    .icon {
+        margin: auto;
+    }
+
+    > li {
+        + li {
+            border-left: 1px solid $line-primary;
+        }
+        > a {
+            color: #B7C0CD;
+            display: block;
+            line-height: 20px;
+            padding: 8px 0;
+            text-align: center;
+            text-decoration: none !important;
+            width: 36px;
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+
+        &.is--active {
+            > a {
+                color: $color-primary;
+            }
+        }
+    }
+}

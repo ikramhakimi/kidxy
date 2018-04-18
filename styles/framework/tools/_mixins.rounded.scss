@@ -1,0 +1,57 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ *  Radius
+ */
+
+@mixin rounded-top() {
+    border-top-left-radius: $base-radius;
+    border-top-right-radius: $base-radius;
+}
+
+@mixin rounded-bottom() {
+    border-bottom-left-radius: $base-radius;
+    border-bottom-right-radius: $base-radius;
+}
+
+@mixin rounded-left() {
+    border-top-left-radius: $base-radius;
+    border-bottom-left-radius: $base-radius;
+}
+
+@mixin rounded-right() {
+    border-top-right-radius: $base-radius;
+    border-bottom-right-radius: $base-radius;
+}

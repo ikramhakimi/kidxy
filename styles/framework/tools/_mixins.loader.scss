@@ -1,0 +1,8 @@
+/**
+ *  Loaders
+ */
+
+@mixin loader-setup($base: $haze-300, $highlight: $haze-600) {
+    border-color: $base;
+    border-left-color: $highlight;
+}

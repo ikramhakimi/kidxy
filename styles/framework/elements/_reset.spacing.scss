@@ -1,0 +1,37 @@
+/**
+ * Reset padding and margin
+ */
+
+body, html,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+figure, figcaption, img,
+dl, dd, ol, ul,
+form, fieldset, legend,
+table, th, td, caption,
+hr {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/**
+ * Reset margin-bottom
+ */
+
+h1, h2, h3, h4, h5, h6,
+p,
+ul, ol, dl,
+blockquote {
+    margin-bottom: $spacing-md
+}
+
+
+li {
+    > ul,
+    > ol{
+         margin-bottom: 0;
+     }
+}

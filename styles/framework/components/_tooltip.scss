@@ -1,0 +1,73 @@
+/*
+<div class="c-tooltip  c-tooltip--[direction]" data-tooltip="[content]">Text</div>
+*/
+
+.c-tooltip {
+    position: relative;
+
+    &::after {
+        background-color: $dark-500;
+        border-radius: $base-radius;
+        bottom: 100%;
+        color: #fff;
+        content: attr(data-tooltip);
+        display: block;
+        font-size: $font-7-size;
+        font-weight: $font-weight-normal;
+        line-height: $font-7-height;
+        left: 50%;
+        max-width: 320px;
+        opacity: 0;
+        overflow: hidden;
+        padding: $spacing-xs $spacing-sm;
+        position: absolute;
+        text-overflow: ellipsis;
+        transform: translate(-50%,$spacing-sm);
+        transition: all .2s ease;
+        white-space: pre;
+        z-index: 300;
+    }
+
+    &:hover::after {
+        opacity: 1;
+        transform: translate(-50%,-$spacing-sm);
+    }
+}
+
+
+.c-tooltip--right {
+    &::after {
+        bottom: 50%;
+        left: 100%;
+        transform: translate(-$spacing-sm,50%);
+    }
+
+    &:hover::after {
+        transform: translate($spacing-sm,50%);
+    }
+}
+
+.c-tooltip--bottom {
+    &::after {
+        bottom: auto;
+        top: 100%;
+        transform: translate(-50%,-$spacing-sm);
+    }
+
+    &:hover::after {
+        transform: translate(-50%,$spacing-sm);
+    }
+}
+
+.c-tooltip--left {
+    &::after {
+        bottom: 50%;
+        left: auto;
+        right: 100%;
+        transform: translate($spacing-sm,50%);
+    }
+
+    &:hover::after {
+        transform: translate(-$spacing-sm,50%);
+    }
+}

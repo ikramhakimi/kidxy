@@ -1,0 +1,34 @@
+/**
+ *  Media query mixin
+ */
+
+$tablet-start                  : 737px  !default;
+$desktop-start                 : 1025px !default;
+$mobile-end                    : $tablet-start - 1px;
+$tablet-end                    : $desktop-start - 1px;
+
+@mixin media-query($media-query){
+    @if $media-query == mobile {
+
+        @media only screen and (max-width:$mobile-end) { @content; }
+
+    }
+
+    @if $media-query == tablet {
+
+        @media only screen and (min-width:$tablet-start) and (max-width:$tablet-end) { @content; }
+
+    }
+
+    @if $media-query == portable {
+
+        @media only screen and (max-width:$tablet-end) { @content; }
+
+    }
+
+    @if $media-query == desktop {
+
+        @media only screen and (min-width:$desktop-start) { @content; }
+
+    }
+}

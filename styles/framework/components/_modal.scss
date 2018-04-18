@@ -1,0 +1,328 @@
+/* ==========================================================================
+   MODAL
+   ========================================================================== */
+
+/**
+ * Modals are flexible dialog prompts.
+ * Using Bootstrap 3.3 modal.js
+ */
+
+$modal-background               : $base-backdrop;
+$modal-lg-width                 : 960px;
+$modal-md-width                 : 440px;
+$modal-sm-width                 : 320px;
+
+
+
+
+body.open--modal {
+    overflow: hidden;
+
+    .c-dialog {
+        display: block;
+    }
+}
+
+.c-modal {
+    -webkit-overflow-scrolling: touch;
+    bottom: 0;
+    display: none;
+    left: 0;
+    right: 0;
+    top: 0;
+    outline: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    width: 100%;
+    z-index: $z-index-modal;
+
+    .is--filled {
+        background-color: $haze-100;
+    }
+}
+
+
+
+/* Dialog
+   ========================================================================== */
+
+/**
+ * A box within the modal
+ */
+
+.c-dialog {
+    animation: slide-down .2s ease 1;
+    background-color: $white;
+    border-radius: $base-radius;
+    background-clip: padding-box;
+    display: none;
+    margin: $spacing-lg auto;
+    max-width: $modal-md-width;
+    position: relative;
+    outline: 0;
+
+    &.is--shaking {
+        animation: shake-horizontal .5s ease-in-out;
+    }
+}
+
+.c-dialog--sm {
+    max-width: $modal-sm-width;
+}
+
+.c-dialog--lg {
+    max-width: $modal-lg-width;
+}
+
+
+
+    .c-dialog__title {
+        font-weight: $font-weight-bold;
+        padding: $spacing-lg;
+        margin: 0;
+    }
+
+    .c-dialog__close {
+        cursor: pointer;
+        display: inline-block;
+        margin: $spacing-sm;
+
+        &:hover {
+            color: $font-link-color;
+        }
+    }
+
+    .c-dialog__body,
+    .c-dialog__foot {
+        @extend .u-clearfix;
+        padding: 0 $spacing-lg $spacing-lg;
+    }
+
+
+
+/* Backdrop
+   ========================================================================== */
+
+/**
+ * Setup modal background color
+ */
+
+.c-backdrop {
+    background: $modal-background;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: $z-index-backdrop;
+
+    + .c-backdrop {
+        display: none !important;
+    }
+}
+
+
+
+
+/* Drawer
+   ========================================================================== */
+
+/**
+ * Modify the modal to work as drawer
+ */
+
+.c-drawer {
+    display: block !important;
+    outline: 0;
+    position: fixed;
+    z-index: $z-index-drawer;
+
+    &.is--active {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+    .c-drawer__parent {
+        z-index: $z-index-drawer-parent;
+    }
+    .c-drawer__child {
+        z-index: $z-index-drawer-child;
+    }
+
+    .c-drawer__content {
+        background-color: $white;
+        position: fixed;
+        transition: transform .4s ease;
+    }
+
+
+.c-drawer--left,
+.c-drawer--right {
+    display: block !important;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+
+    > .c-drawer__content {
+        height: 100%;
+        width: 400px;
+        top: 0;
+    }
+
+    &.is--active > .c-drawer__content {
+        transform: translateX(0);
+    }
+}
+
+.c-drawer--left  {
+    left: 0;
+
+    > .c-drawer__content {
+        left: 0;
+        transform: translateX(-100%);
+    }
+}
+
+.c-drawer--right {
+    right: 0;
+
+    > .c-drawer__content {
+        right: 0;
+        transform: translateX(100%);
+    }
+}
+
+
+.c-drawer--bottom,
+.c-drawer--top {
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    > .c-drawer__content {
+        left: 0;
+        width: 100%;
+    }
+}
+
+.c-drawer--bottom  {
+    bottom: 0;
+
+    > .c-drawer__content {
+        bottom: -100%;
+        transform: translateY(100%);
+    }
+
+    &.is--active > .c-drawer__content {
+        bottom: 0;
+        transform: translateY(0);
+    }
+}
+
+.c-drawer--top  {
+    top: 0;
+
+    > .c-drawer__content {
+        top: -100%;
+        transform: translateY(-100%);
+    }
+
+    &.is--active > .c-drawer__content {
+        top: 0;
+        transform: translateY(0);
+    }
+}
+
+
+.c-drawer__close,
+.c-dialog__close {
+    background: $haze-200;
+    border-radius: 100%;
+    cursor: pointer;
+    display: inline-block;
+    color: $font-muted-color;
+    padding: 6px;
+    text-decoration: none !important
+}
+
+
+
+// Ikram - Need to refactor this
+.c-drawer__menu {
+    > li {
+        margin-bottom: 1px;
+
+        > a {
+            color: $font-base-color;
+            padding: 8px 16px 8px 24px;
+            text-decoration: none;
+            outline: none !important;
+
+            &:hover {
+                background-color:  $haze-100;
+            }
+        }
+
+        .icon {
+            color: $haze-500;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+        }
+    }
+
+    .c-collapse-toggle:not(.collapsed) {
+        background-color: $haze-100;
+    }
+
+    .c-collapse {
+        &.collapse.in {
+            background-color: $haze-100;
+        }
+
+        > li {
+            &:first-child {
+                margin-top: $spacing-sm
+            }
+
+            &:last-child {
+                margin-bottom: $spacing-md
+            }
+
+            > a {
+                color: $font-muted-color;
+                display: block;
+                line-height: 24px;
+                font-size: $font-base-size - 1;
+                text-decoration: none;
+                padding-left: 80px;
+
+                &:hover {
+                    background-color: $haze-200;
+                    color: $font-base-color;
+                }
+            }
+        }
+    }
+}
+
+
+@include media-query(mobile) {
+    /* In Mobile view, we apply background color to .c-modal to imitate .c-backdrop behaviour */
+    .c-modal {
+        background: $modal-background;
+    }
+
+    .c-dialog {
+        margin: $spacing-sm;
+    }
+
+    /* In Mobile view, we hide .c-backdrop behaviour */
+    .c-backdrop {
+        display: none;
+    }
+}

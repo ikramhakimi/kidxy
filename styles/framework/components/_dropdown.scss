@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Dropdown
+   ========================================================================== */
+
+/**
+ * Dropdown are used to toggle sections of content or options.
+ * -- Require Bootstrap 3.3 dropdown.js
+ */
+
+
+$dropdown-width                 : 220px;
+$dropdown-hover-background      : $blue-100;
+$dropdown-hover-font-color      : $font-link-color;
+$dropdown-active-background     : $haze-200;
+$dropdown-active-font-color     : $font-base-color;
+
+
+.c-dropdown {
+    display: inline-block;
+    position: relative;
+    vertical-align: inherit;
+}
+
+
+    .c-dropdown__base {
+        animation: slide-down .2s ease 1;
+        display: none;
+        left: 0;
+        min-width: $dropdown-width;
+        padding-top: $spacing-xs;
+        position: absolute;
+        top: 100%;
+        z-index: 9999;
+    }
+
+
+    .c-dropdown__menu {
+        @extend .u-shadow-2dp;
+        background-color: $white;
+        border-radius: $base-radius;
+        list-style: none;
+        padding: $spacing-sm 0;
+        margin: 0;
+        text-align: left;
+
+        li {
+            > a,
+            > div,
+            > span {
+                display: block;
+                padding: 0 12px;
+            }
+
+            > a {
+                color: $font-base-color;
+                line-height: 32px;
+                outline: none !important;
+                text-decoration: none !important;
+
+                &:hover {
+                    background: $dropdown-hover-background;
+                    color: $dropdown-hover-font-color;
+                }
+            }
+
+            &.is--active > a {
+                background: $dropdown-active-background !important;
+                color: $dropdown-active-font-color !important;
+            }
+
+            &.u-divider {
+                margin: $spacing-sm 0;
+            }
+        }
+    }
+
+
+.is--open > .c-dropdown__base,
+.c-dropdown--hover:hover > .c-dropdown__base {
+    display: block;
+}
+
+
+.c-dropdown--right {
+    > .c-dropdown__base {
+        left: auto;
+        right: 0;
+    }
+}

@@ -1,0 +1,79 @@
+@mixin width-setup($breakpoint: 'global') {
+    $width-delimiter: \/ !default;
+    $breakpoint-separator: \@ !default;
+
+    @if $breakpoint == 'global' {
+        $breakpoint-separator: '';
+        $breakpoint: '';
+    }
+
+    // width--[number]#{$width-delimiter}[number]#{$breakpoint-separator}{$breakpoint}
+
+    .u-width-1#{$breakpoint-separator}#{$breakpoint}         { width:100%; }
+
+    .u-width-1#{$width-delimiter}2#{$breakpoint-separator}#{$breakpoint}     { width:50%; }
+    .u-width-1#{$width-delimiter}3#{$breakpoint-separator}#{$breakpoint}     { width:33.333%; }
+    .u-width-2#{$width-delimiter}3#{$breakpoint-separator}#{$breakpoint}     { width:66.666%; }
+
+    .u-width-1#{$width-delimiter}4#{$breakpoint-separator}#{$breakpoint}     { width:25%; }
+    .u-width-2#{$width-delimiter}4#{$breakpoint-separator}#{$breakpoint}     { @extend .u-width-1#{$width-delimiter}2#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-3#{$width-delimiter}4#{$breakpoint-separator}#{$breakpoint}     { width:75%; }
+
+    .u-width-1#{$width-delimiter}5#{$breakpoint-separator}#{$breakpoint}     { width:20%; }
+    .u-width-2#{$width-delimiter}5#{$breakpoint-separator}#{$breakpoint}     { width:40%; }
+    .u-width-3#{$width-delimiter}5#{$breakpoint-separator}#{$breakpoint}     { width:60%; }
+    .u-width-4#{$width-delimiter}5#{$breakpoint-separator}#{$breakpoint}     { width:80%; }
+
+    .u-width-1#{$width-delimiter}6#{$breakpoint-separator}#{$breakpoint}     { width:16.666%; }
+    .u-width-2#{$width-delimiter}6#{$breakpoint-separator}#{$breakpoint}     { @extend .u-width-1#{$width-delimiter}3#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-3#{$width-delimiter}6#{$breakpoint-separator}#{$breakpoint}     { @extend .u-width-1#{$width-delimiter}2#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-4#{$width-delimiter}6#{$breakpoint-separator}#{$breakpoint}     { @extend .u-width-2#{$width-delimiter}3#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-5#{$width-delimiter}6#{$breakpoint-separator}#{$breakpoint}     { width:83.333%; }
+
+    .u-width-1#{$width-delimiter}8#{$breakpoint-separator}#{$breakpoint}     { width:12.5%; }
+    .u-width-2#{$width-delimiter}8#{$breakpoint-separator}#{$breakpoint}     { @extend .u-width-1#{$width-delimiter}4#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-3#{$width-delimiter}8#{$breakpoint-separator}#{$breakpoint}     { width:37.5%; }
+    .u-width-4#{$width-delimiter}8#{$breakpoint-separator}#{$breakpoint}     { @extend .u-width-1#{$width-delimiter}2#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-5#{$width-delimiter}8#{$breakpoint-separator}#{$breakpoint}     { width:62.5%; }
+    .u-width-6#{$width-delimiter}8#{$breakpoint-separator}#{$breakpoint}     { @extend .u-width-3#{$width-delimiter}4#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-7#{$width-delimiter}8#{$breakpoint-separator}#{$breakpoint}     { width:87.5%; }
+
+    .u-width-1#{$width-delimiter}10#{$breakpoint-separator}#{$breakpoint}    { width:10%; }
+    .u-width-2#{$width-delimiter}10#{$breakpoint-separator}#{$breakpoint}    { @extend .u-width-1#{$width-delimiter}5#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-3#{$width-delimiter}10#{$breakpoint-separator}#{$breakpoint}    { width:30%; }
+    .u-width-4#{$width-delimiter}10#{$breakpoint-separator}#{$breakpoint}    { @extend .u-width-2#{$width-delimiter}5#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-5#{$width-delimiter}10#{$breakpoint-separator}#{$breakpoint}    { @extend .u-width-1#{$width-delimiter}2#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-6#{$width-delimiter}10#{$breakpoint-separator}#{$breakpoint}    { @extend .u-width-3#{$width-delimiter}5#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-7#{$width-delimiter}10#{$breakpoint-separator}#{$breakpoint}    { width:70%; }
+    .u-width-8#{$width-delimiter}10#{$breakpoint-separator}#{$breakpoint}    { @extend .u-width-4#{$width-delimiter}5#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-9#{$width-delimiter}10#{$breakpoint-separator}#{$breakpoint}    { width:90%; }
+
+    .u-width-1#{$width-delimiter}12#{$breakpoint-separator}#{$breakpoint}    { width:8.333%; }
+    .u-width-2#{$width-delimiter}12#{$breakpoint-separator}#{$breakpoint}    { @extend .u-width-1#{$width-delimiter}6#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-3#{$width-delimiter}12#{$breakpoint-separator}#{$breakpoint}    { @extend .u-width-1#{$width-delimiter}4#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-4#{$width-delimiter}12#{$breakpoint-separator}#{$breakpoint}    { @extend .u-width-1#{$width-delimiter}3#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-5#{$width-delimiter}12#{$breakpoint-separator}#{$breakpoint}    { width:41.666% }
+    .u-width-6#{$width-delimiter}12#{$breakpoint-separator}#{$breakpoint}    { @extend .u-width-1#{$width-delimiter}2#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-7#{$width-delimiter}12#{$breakpoint-separator}#{$breakpoint}    { width:58.333%; }
+    .u-width-8#{$width-delimiter}12#{$breakpoint-separator}#{$breakpoint}    { @extend .u-width-2#{$width-delimiter}3#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-9#{$width-delimiter}12#{$breakpoint-separator}#{$breakpoint}    { @extend .u-width-3#{$width-delimiter}4#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-10#{$width-delimiter}12#{$breakpoint-separator}#{$breakpoint}   { @extend .u-width-5#{$width-delimiter}6#{$breakpoint-separator}#{$breakpoint}; }
+    .u-width-11#{$width-delimiter}12#{$breakpoint-separator}#{$breakpoint}   { width:91.666%; }
+}
+
+
+
+@include width-setup();
+
+
+
+
+@if $responsive == true {
+    @include media-query(portable){
+        @include width-setup('portable');
+    }
+
+    @include media-query(mobile){
+        @include width-setup('mobile');
+    }
+}

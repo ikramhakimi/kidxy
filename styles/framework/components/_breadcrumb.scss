@@ -1,0 +1,54 @@
+.c-breadcrumb {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+
+    > li {
+        float: left;
+        max-width: 160px;
+        position: relative;
+        text-align: center;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    > li:not(:last-child) {
+        padding-right: 24px;
+
+        &:after {
+            @extend .icon;
+            color: $font-muted-color;
+            font-size: 16px;
+            display: block;
+            line-height: inherit;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 24px;
+        }
+    }
+}
+
+
+.c-breadcrumb:not(.c-breadcrumb--even) > li:not(:last-child) {
+    color: $font-muted-color;
+}
+
+
+.c-breadcrumb--bar {
+    > li:not(:last-child) {
+
+        &:after {
+            background-color: $haze-300;
+            content: '';
+            height: 16px;
+            width: 1px;
+            right: 11px;
+            top: 50%;
+            margin-top: -8px;
+        }
+    }
+}

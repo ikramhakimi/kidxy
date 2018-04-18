@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Container
+   ========================================================================== */
+
+/**
+ * Content limit and wrapping elements.
+ */
+
+$container-width                : 1170px;
+$container-desktop-spacing      : 12px;
+$container-mobile-spacing       : 20px;
+
+
+.o-container {
+    @include clearfix();
+    margin: 0 auto;
+    max-width: $container-width + $container-desktop-spacing*2;
+    padding-left: $container-desktop-spacing;
+    padding-right: $container-desktop-spacing;
+    width: 100%;
+}
+
+
+.o-container--fluid {
+    max-width: 100%;
+    padding-left: $spacing-lg;
+    padding-right: $spacing-lg;
+}
+
+
+@if responsive {
+    @include media-query('mobile') {
+        .o-container {
+            padding-left: $container-mobile-spacing;
+            padding-right: $container-mobile-spacing;
+        }
+    }
+}

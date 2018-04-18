@@ -1,0 +1,401 @@
+.c-btn {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: $base-radius;
+    color: $font-base-color;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $button-font-family;
+    font-size: $button-font-size;
+    font-weight: $font-weight-semibold;
+    line-height: $button-font-height;
+    margin: 0;
+    padding: ($button-padding-vertical) ($button-padding-horizontal);
+    outline: none;
+    position: relative;
+    text-align: center;
+    text-decoration: none !important;
+    transition: all .4s ease;
+    vertical-align: top;
+    white-space: nowrap;
+
+    &:active,
+    &:focus {
+        outline: none;
+    }
+
+    &disabled,
+    &.is--disabled {
+        cursor: default;
+    }
+
+    > .icon {
+        display: inline-block;
+        font-size: 16px;
+        margin: 0 12px 0 -4px;
+        vertical-align: top;
+
+        &,
+        &::before {
+            height: auto;
+            line-height: inherit;
+        }
+    }
+}
+
+
+/**
+ * Button Sizes
+ */
+
+.c-btn--lg {
+    border-radius: $base-radius + 2;
+    font-size: $button-lg-font-size;
+    line-height: $button-lg-font-height;
+    padding: ($button-lg-padding-vertical) ($button-lg-padding-horizontal);
+
+    > .icon {
+        font-size: 20px;
+        margin: 0 12px 0 -8px;
+    }
+}
+
+.c-btn--sm {
+    font-size: $button-sm-font-size;
+    padding: ($button-sm-padding-vertical) ($button-sm-padding-horizontal);
+
+    > .icon {
+        margin: 0 12px 0 0;
+    }
+}
+
+
+.c-btn--xs {
+    font-size: $button-xs-font-size;
+    line-height: $button-xs-font-height;
+    padding: ($button-xs-padding-vertical) ($button-xs-padding-horizontal);
+}
+
+.c-btn--full {
+    width: 100%
+}
+
+
+
+
+/* Primary Button
+   ========================================================================== */
+/**
+ * Use this button as a dominant or go to button.
+ */
+
+.c-btn--primary {
+    background-color: $color-primary;
+    color: $white;
+
+    &:hover,
+    &:active,
+    &.is--active {
+        background-color: $color-primary-darker;
+    }
+
+    &.is--loading:before {
+        @include loader-setup($blue-300, $blue-100);
+    }
+
+    &disabled,
+    &.is--disabled {
+        background-color: $color-primary-lighter !important;
+    }
+}
+
+.c-btn--primary-outline {
+    background-color: transparent;
+    border-color: $color-primary;
+    color: $color-primary;
+
+    &:hover {
+        background-color: $color-primary;
+        color: $white;
+    }
+
+    &:active,
+    &:focus,
+    &.is--active,
+    .is--active > & {
+        background-color: $color-primary;
+        border-color: $color-primary;
+        color: $white;
+    }
+
+    &.is--loading:before {
+        @include loader-setup($blue-200, $blue-400);
+    }
+
+    &disabled,
+    &.is--disabled {
+        background-color: transparent !important;
+        border-color: $color-primary-lighter !important;
+        color: $color-primary-lighter !important;
+    }
+}
+
+
+
+
+/* Secondary Button
+   ========================================================================== */
+/**
+ * Use this button as a normal button.
+ */
+
+.c-btn--secondary {
+    background-color: $haze-200;
+    border-color: $haze-300;
+    color: $dark-300;
+
+    &:hover,
+    &:active,
+    &.is--active {
+        background-color: $haze-300;
+        border-color: $haze-400;
+    }
+
+    &.is--loading:before {
+        @include loader-setup($haze-700, $haze-200);
+    }
+
+    &disabled,
+    &.is--disabled {
+        background-color: $haze-200 !important;
+        color: $haze-700 !important;
+    }
+}
+
+.c-btn--secondary-outline {
+    background-color: $white;
+    border-color: $haze-300;
+    color: $dark-400;
+
+    &:hover {
+        background-color: $haze-200;
+        border-color: $haze-300;
+    }
+
+    &:active,
+    &:focus,
+    &.is--active,
+    .is--active > & {
+        background-color: $haze-300;
+        border-color: $haze-300;
+    }
+
+    &.is--loading:before {
+        @include loader-setup($haze-300, $haze-600);
+    }
+
+    &disabled,
+    &.is--disabled {
+        background-color: transparent !important;
+        border-color: $haze-200 !important;
+        color: $haze-700 !important;
+    }
+}
+
+
+
+
+/* Positive Button
+   ========================================================================== */
+/**
+ * Use this button for positive and safe action.
+ */
+
+.c-btn--positive {
+    background-color: $green-500;
+    color: $white;
+
+    &:hover,
+    &:active,
+    &.is--active {
+        background-color: $green-600;
+    }
+
+    &.is--loading:before {
+        @include loader-setup($green-300, $white);
+    }
+
+    &disabled,
+    &.is--disabled {
+        background-color: $green-300 !important;
+    }
+}
+
+
+
+
+/* Negative Button
+   ========================================================================== */
+/**
+ * Use this button for positive and safe action.
+ */
+
+.c-btn--negative {
+    background-color: $red-500;
+    color: $white;
+
+    &:hover,
+    &:active,
+    &.is--active {
+        background-color: $red-600;
+    }
+
+    &.is--loading:before {
+        @include loader-setup($red-300, $white);
+    }
+
+    &disabled,
+    &.is--disabled {
+        background-color: $red-300 !important;
+    }
+}
+
+
+
+
+/* Negative Button
+   ========================================================================== */
+/**
+ * Use this button for positive and safe action.
+ */
+
+.c-btn--link {
+    color: $font-link-color;
+
+    &:hover,
+    &:active,
+    &.is--active {
+        background-color: $blue-100;
+        text-decoration: underline !important;
+    }
+
+    &.is--loading:before {
+        @include loader-setup($blue-200, $blue-400);
+    }
+
+    &disabled,
+    &.is--disabled {
+        background-color: transparent !important;
+        color: $font-muted-color;
+    }
+}
+
+
+
+
+/* Button Icon
+   ========================================================================== */
+/**
+ * Use this button for positive and safe action.
+ */
+
+.c-btn--icon {
+    > .icon {
+        margin: 0 -4px;
+    }
+}
+
+
+
+
+/* Grouped Buttons
+   ========================================================================== */
+/**
+ * Wrap a series of buttons
+ */
+
+.c-btn--dropdown {
+    &:after {
+        content: '\e313';
+        display: inline-block;
+        line-height: inherit;
+        font-family: $base-font-icon;
+        font-size: 20px;
+        margin: 0 -8px 0 4px;
+        opacity: .5;
+        vertical-align: top;
+    }
+}
+
+
+
+
+/* Grouped Buttons
+   ========================================================================== */
+/**
+ * Wrap a series of buttons
+ */
+
+.c-btn-group {
+    display: inline-flex;
+    vertical-align: middle;
+
+    > .c-btn,
+    > .c-dropdown > .c-btn {
+        border-radius: 0;
+        flex: 1;
+        position: relative;
+        z-index: 1;
+
+        &:hover,
+        &.is--active {
+            z-index: 2;
+        }
+
+        &.is--disabled {
+            z-index: 0;
+        }
+    }
+
+    .c-btn,
+    .c-dropdown {
+        &:not(:first-child) {
+            margin-left: -1px;
+        }
+    }
+
+    > .c-btn:first-child,
+    > .c-dropdown:first-child > .c-btn {
+        border-top-left-radius: $base-radius;
+        border-bottom-left-radius: $base-radius;
+    }
+
+    > .c-btn:last-child,
+    > .c-dropdown:last-child > .c-btn {
+        border-top-right-radius: $base-radius;
+        border-bottom-right-radius: $base-radius;
+    }
+}
+
+.c-btn-group--full {
+    display: flex;
+}
+
+
+
+
+/* Inline Buttons
+   ========================================================================== */
+/**
+ * Standardise spacings between buttons whenever they inlined
+ */
+
+.c-btn-inline {
+    font-size: 0;
+    white-space: nowrap;
+
+    > .c-btn:not(:first-child),
+    > .c-btn-group:not(:first-child) {
+        margin-left: $spacing-sm;
+    }
+}

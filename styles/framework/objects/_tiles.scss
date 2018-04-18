@@ -1,0 +1,197 @@
+/*
+ *
+<div class="o-tile  o-tile--[size]  o-tile--top">
+    <div class="o-tile__left">
+        <a href="#" class="o-embed  o-embed--4x3">
+            <img src="images/image.png">
+        </a>
+    </div>
+
+    <div class="o-tile__body">
+        Content
+    </div>
+</div>
+
+<a href="#" class="o-tile  o-tile--[size]">
+    <span class="o-tile__left">
+        <span class="icon  icon--[type]"></span>
+    </span>
+
+    <span class="o-tile__body">
+        Content
+    </span>
+</a>
+ */
+
+
+.o-tile {
+    display: table;
+    width: 100%;
+}
+
+.o-tile--auto {
+    width: auto;
+}
+
+.o-tile--center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.o-tile--reversed {
+    direction: rtl;
+}
+
+.o-tile__item,
+.o-tile__left,
+.o-tile__body,
+.o-tile__right {
+    display: table-cell !important;
+    vertical-align: top;
+    direction: ltr;
+}
+
+.o-tile__left,
+.o-tile__right {
+    white-space: nowrap;
+    width: 1px;
+}
+
+.o-tile__left {
+    padding-right: $spacing-md;
+}
+
+.o-tile__right {
+    padding-left: $spacing-md;
+}
+
+.o-tile__content {
+    white-space: normal;
+}
+
+
+/* Alignment */
+
+.o-tile--middle {
+    > .o-tile__item,
+    > .o-tile__left,
+    > .o-tile__body,
+    > .o-tile__right {
+        vertical-align: middle;
+    }
+}
+
+.o-tile--bottom {
+    > .o-tile__item,
+    > .o-tile__left,
+    > .o-tile__body,
+    > .o-tile__right {
+        vertical-align: bottom;
+    }
+}
+
+
+/* Sizes */
+
+
+
+
+@mixin tile-setup($size, $breakpoint: 'global') {
+
+    $spacing: '';
+    $breakpoint-separator: \@ !default;
+
+
+    @if $breakpoint == 'global' {
+        $breakpoint-separator: '';
+        $breakpoint: '';
+    }
+
+
+    @if $size == 'xl' {
+        $spacing: $spacing-xl;
+    }
+
+    @if $size == 'lg' {
+        $spacing: $spacing-lg;
+    }
+
+    @if $size == 'md' {
+        $spacing: $spacing-md;
+    }
+
+    @if $size == 'sm' {
+        $spacing: $spacing-sm;
+    }
+
+    @if $size == 'xs' {
+        $spacing: $spacing-xs;
+    }
+
+
+    .o-tile--#{$size}#{$breakpoint-separator}#{$breakpoint} {
+        > .o-tile__left     { padding-right: $spacing; }
+        > .o-tile__right    { padding-left:  $spacing; }
+    }
+}
+
+@mixin tile-reversed($size, $breakpoint: 'global') {
+    $spacing: '';
+    $breakpoint-separator: \@ !default;
+
+
+    @if $breakpoint == 'global' {
+        $breakpoint-separator: '';
+        $breakpoint: '';
+    }
+
+
+    @if $size == 'xl' {
+        $spacing: $spacing-xl;
+    }
+
+    @if $size == 'lg' {
+        $spacing: $spacing-lg;
+    }
+
+    @if $size == 'md' {
+        $spacing: $spacing-md;
+    }
+
+    @if $size == 'sm' {
+        $spacing: $spacing-sm;
+    }
+
+    @if $size == 'xs' {
+        $spacing: $spacing-xs;
+    }
+
+
+    .o-tile--#{$size}-reversed#{$breakpoint-separator}#{$breakpoint} {
+        direction: rtl;
+
+        > .o-tile__left     { padding-right: 0; padding-left: $spacing;  }
+        > .o-tile__right    { padding-right: $spacing; padding-left: 0; }
+    }
+}
+
+@include tile-setup('xl');
+@include tile-setup('lg');
+@include tile-setup('md');
+@include tile-setup('sm');
+@include tile-setup('xs');
+
+
+@if $responsive {
+    @include media-query('mobile') {
+        @include tile-setup('lg','mobile');
+        @include tile-setup('md','mobile');
+        @include tile-setup('sm','mobile');
+        @include tile-setup('xs','mobile');
+
+        @include tile-reversed('lg','mobile');
+        @include tile-reversed('md','mobile');
+        @include tile-reversed('sm','mobile');
+        @include tile-reversed('xs','mobile');
+    }
+}

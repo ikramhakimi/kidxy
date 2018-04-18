@@ -1,0 +1,248 @@
+// Define brand grid sizes for normal and small
+$brand-grid         : 64px !default;
+$brand-grid--small  : 28px !default;
+
+// Brand normal size
+.brand {
+	background-image: url('/images/sprite--brandsP.png');
+    background-size: $brand-grid auto;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: $brand-grid;
+    width: $brand-grid;
+}
+
+// Brands smaller size
+.brand-small {
+    background-image: url('/images/sprite--brandsP.png');
+    background-size: $brand-grid--small auto;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: $brand-grid--small;
+    width: $brand-grid--small;
+}
+
+.brand-label--small {
+    line-height: $brand-grid--small;
+}
+
+// Hacked for Indonesia
+// @if ($use-indonesia == true) {
+//     .brand--mcycle.brand--honda {
+//         background-position: 0 -4352px;
+//     }
+//     .brand-small--mcycle.brand-small--honda {
+//         background-position: 0 -1904px;
+//     }
+// }
+
+$brand: brand !default;
+$brand-small: brand-small !default;
+
+$brand-list:
+    ('mcycle',
+    'abarth',
+    'ac',
+    'alfa-romeo',
+    'amc',
+    'appktm',
+    'aprilia',
+    'argo',
+    'asia',
+    'aston-martin',
+    'audi',
+    'auman',
+    'austin',
+    'baic',
+    'bajaj',
+    'beijing',
+    'benelli',
+    'bentley',
+    'bmw',
+    'boon-koon',
+    'brabus',
+    'brilliance',
+    'bufori',
+    'buick',
+    'cadillac',
+    'cagiva',
+    'can-am',
+    'case',
+    'caterham',
+    'chana',
+    'changan',
+    'chery',
+    'chevrolet',
+    'chrysler',
+    'citroen',
+    'daewoo',
+    'daf',
+    'daihatsu',
+    'daimler',
+    'datsun',
+    'deva',
+    'dfm',
+    'dfsk',
+    'dodge',
+    'dong-feng',
+    'ducati',
+    'dynapac',
+    'ferrari',
+    'fiat',
+    'foday',
+    'ford',
+    'foton',
+    'geely',
+    'gmc',
+    'golden-dragon',
+    'great-wall',
+    'gwm',
+    'hafei',
+    'hamm',
+    'harley-davidson',
+    'haval',
+    'hicom',
+    'hino',
+    'hitachi',
+    'hohan',
+    'holden',
+    'honda',
+    'honda-bike',
+    'huanghai',
+    'hummer',
+    'husqvarna',
+    'h-yosung',
+    'hyundai',
+    'impul',
+    'infiniti',
+    'inokom',
+    'isuzu',
+    'iveco',
+    'jac',
+    'jaguar',
+    'jbc',
+    'jeep',
+    'jinbei',
+    'jmc',
+    'joylong',
+    'kaisar',
+    'kama',
+    'kanzen',
+    'kawasaki',
+    'kia',
+    'king-long',
+    'kobelco',
+    'komatsu',
+    'ktm',
+    'kubota',
+    'kymco',
+    'lamborghini',
+    'lancia',
+    'land-rover',
+    'lexus',
+    'lincoln',
+    'lmg',
+    'lotus',
+    'mahindra',
+    'maserati',
+    'massey-ferguson',
+    'maxus',
+    'maybach',
+    'mazda',
+    'mclaren',
+    'mercedes-benz',
+    'mercedes-maybach',
+    'mercury',
+    'mg',
+    'mg-rover',
+    'minerva',
+    'mini',
+    'mitsubishi',
+    'mitsuoka',
+    'monstrack',
+    'montrada',
+    'morris',
+    'naza',
+    'nissan',
+    'oldsmobile',
+    'opel',
+    'perodua',
+    'peugeot',
+    'piaggio',
+    'plymouth',
+    'polarsun',
+    'pontiac',
+    'porsche',
+    'proton',
+    'puma',
+    'regal-raptor',
+    'rely',
+    'renault',
+    'rolls-royce',
+    'rover',
+    'ruf',
+    'saab',
+    'scania',
+    'seat',
+    'skoda',
+    'smart',
+    'sokon',
+    'sonalika',
+    'spyker',
+    'ssangyong',
+    'subaru',
+    'sumitomo',
+    'sunbeam',
+    'suzuki',
+    'sym',
+    'tadano',
+    'tata',
+    'td2000',
+    'tesla',
+    'timor',
+    'tosa',
+    'toyota',
+    'tr',
+    'triumph',
+    'tvr',
+    'tvs',
+    'ud-trucks',
+    'vespa',
+    'viar',
+    'volkswagen',
+    'volvo',
+    'wald',
+    'wuling',
+    'yamaha',
+    'yangtse',
+    'young-man',
+    'zhongtong',
+    'zna',
+    'zx-auto',
+    'cam');
+
+    // These brand sprites below is yet to be found. Add it to last of the class brands of the variable above, only if the brand sprites has been updated.
+    // ----
+    // 'attham',
+    // 'bear',
+    // 'bison',
+    // 'cam' Added in https://jira.carlist.my:9191/browse/MYBP-3307,
+    // 'clark',
+    // 'farid',
+    // 'marvia',
+    // 'sanex',
+    // 'shenyang-brilliance',
+    // 'tuah',
+    // 'weststar',
+
+
+@each $brand-name in $brand-list {
+
+    .#{$brand}--#{$brand-name} {
+        background-position: 0 (index($brand-list, $brand-name)*-$brand-grid);
+    }
+
+    .#{$brand-small}--#{$brand-name} {
+        background-position: 0 (index($brand-list, $brand-name)*-$brand-grid--small);
+    }
+}

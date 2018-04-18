@@ -1,0 +1,5 @@
+.c-box {
+    background: $white;
+    border-radius: 2px;
+    @include shadow-1dp();
+}

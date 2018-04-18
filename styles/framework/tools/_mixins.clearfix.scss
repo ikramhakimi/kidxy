@@ -1,0 +1,16 @@
+/*
+ *  Clearfix
+ *
+ *  Quickly and easily clear floated content within a container by adding
+ *  a clearfix utility.
+ *
+    @include clearfix();
+ */
+
+@mixin clearfix() {
+    &::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
