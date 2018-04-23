@@ -2,7 +2,7 @@
     <div class="o-container">
         <div class="o-tile  o-tile--middle">
             <div class="o-tile__left  u-padding-right-xl">
-                <a href="#" class="u-block">
+                <a href="index.php" class="u-block">
                     <img src="https://kidxy.com/assets/images/logo.png" height="32" class="u-block">
                 </a>
             </div>
@@ -10,9 +10,10 @@
             <div class="o-tile__left">
                 <ul class="o-menu">
                     <li class="is--active"><a href="#">Activities</a></li>
-                    <li><a href="#">Kids Party</a></li>
-                    <li><a href="#">DIY Kits</a></li>
-                    <li><a href="#">Kidxy Credits</a></li>
+                    <li><a href="#">Packages</a></li>
+                    <li><a href="#">Parties</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">K-ommunity</a></li>
                 </ul>
             </div>
 

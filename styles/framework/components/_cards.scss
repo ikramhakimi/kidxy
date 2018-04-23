@@ -6,15 +6,17 @@
  * Cards are flexible content containers.
  */
 
-$card-spacing-horizontal        : 16px;
-$card-spacing-vertical          : 16px;
+$card-spacing-horizontal        : 12px;
+$card-spacing-vertical          : 12px;
 
 
 .c-card {
     background-color: $white;
     border-radius: $base-radius;
-    position: relative;
     box-shadow: 0 0 0 1px lighten($line-primary, 10%);
+    display: block;
+    position: relative;
+    text-decoration: none !important;
 
     .is--filled {
         background-color: $haze-100;

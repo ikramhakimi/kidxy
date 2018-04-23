@@ -1,0 +1,49 @@
+.c-promoted-categories {
+    padding: 0 20px;
+
+    .o-list {
+        > li {
+            + li {
+                border-top: 2px dotted #ECECEC;
+            }
+            > a {
+                display: block;
+                line-height: 48px;
+            }
+        }
+    }
+}
+
+@include media-query(mobile) {
+    .c-section--categories {
+        .o-flex {
+            display: block;
+            font-size: 0;
+            margin-left: -$container-mobile-spacing;
+            margin-right: -$container-mobile-spacing;
+            overflow: scroll;
+            white-space: nowrap;
+
+            .o-flex__item {
+                display: inline-block;
+                height: 158px;
+                padding: 0 !important;
+                margin-right: 12px;
+                vertical-align: top;
+
+                &:first-child {
+                    margin-left: $container-mobile-spacing;
+                }
+
+                &:last-child {
+                    margin-right: $container-mobile-spacing;
+                }
+            }
+
+            .c-card {
+                height: calc(100% - 2px);
+                white-space: normal;
+            }
+        }
+    }
+}

@@ -10,8 +10,13 @@
     .icon {
         display: inline-block;
         font-size: 18px;
-        line-height: 1em;
         vertical-align: top;
+
+        &,
+        &:before {
+            height: $font-base-height;
+            line-height: $font-base-height;
+        }
     }
 }
 
@@ -27,25 +32,4 @@
         overflow: hidden;
         position: absolute;
         top: 0;
-    }
-
-
-
-
-.c-rating-bar {
-    background: $haze-200;
-    border-radius: 2px;
-    height: 4px;
-    overflow: hidden;
-    position: relative;
-}
-
-
-    .c-rating-bar__bar {
-        background-color: $rating-color-active;
-        border-radius: 2px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
     }

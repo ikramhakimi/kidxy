@@ -1,6 +1,6 @@
 <?php
 include 'views/templates/head.php';
-include 'views/templates/header.php';
+include 'views/templates/toolbar.php';
 ?>
 
 <div class="o-container  u-margin-ends-lg">
@@ -191,7 +191,7 @@ include 'views/templates/header.php';
 
         <div class="o-grid__item  u-width-3/4">
             <?php for($count=0; $count<10; $count++) { ?>
-                <?php include 'views/templates/card-product-horizontal.php'; ?>
+                <?php include 'views/product/card-product-horizontal.php'; ?>
             <?php } ?>
         </div>
     </div>

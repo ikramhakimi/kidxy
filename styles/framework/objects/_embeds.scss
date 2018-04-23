@@ -81,6 +81,10 @@
     .o-embed--16x9#{$breakpoint-separator}#{$breakpoint}:before {
         padding-top: 56.25%;
     }
+
+    .o-embed--3x1#{$breakpoint-separator}#{$breakpoint}:before {
+        padding-top: 33.333%;
+    }
 }
 
 

@@ -59,6 +59,7 @@
 
 @import 'objects/container';
 @import 'objects/embeds';
+@import 'objects/flex';
 @import 'objects/lists';
 @import 'objects/menu';
 @import 'objects/grids';
@@ -87,15 +88,13 @@
 @import 'components/table';
 @import 'components/tabs';
 @import 'components/tooltip';
-
 @import 'components/carousel';
 
 
 @import 'components/header';
 @import 'components/footer';
 @import 'components/manage';
-
-
+@import 'components/product';
 
 
 
@@ -117,3 +116,10 @@
 @import 'utilities/shadows';
 @import 'utilities/spacings';
 @import 'utilities/widths';
+
+
+/**
+ * Views
+ */
+
+@import 'views/home';

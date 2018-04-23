@@ -27,7 +27,7 @@
         &:before {
             @extend .icon;
             color: inherit;
-            font-size: 24px;
+            font-size: 28px;
             margin: auto;
         }
     }
@@ -65,6 +65,62 @@
             &.active {
                 background-color: $haze-600;
             }
+        }
+    }
+}
+
+
+.c-carousel--cards {
+    .owl-stage-outer {
+        margin-bottom: $spacing-md;
+    }
+
+    .owl-nav > button {
+        background-color: #4A4A4A;
+        border-radius: $base-radius;
+        color: #C9C9C9;
+        height: 36px;
+        margin-top: -16px;
+        position: absolute;
+        top: 50%;
+        width: 36px;
+
+        &.disabled {
+            background-color: #D7D7D7;
+            color: #F0F0F0;
+            cursor: auto;
+        }
+    }
+
+    .owl-prev {
+        left: -36px - $spacing-sm;
+    }
+
+    .owl-next {
+        right: -36px - $spacing-sm;
+    }
+
+    .owl-stage {
+        display: flex;
+
+        .item {
+            height: 100%;
+        }
+    }
+
+    .c-card {
+        height: calc(100% - 2.5px);
+    }
+}
+
+@include media-query(mobile) {
+    .c-carousel--cards {
+        margin-left: -$container-mobile-spacing;
+        margin-right: -$container-mobile-spacing;
+        width: auto;
+
+        .owl-stage {
+            padding-left: $container-mobile-spacing !important;
         }
     }
 }

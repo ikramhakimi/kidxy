@@ -1,0 +1,65 @@
+.o-flex {
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+    flex-flow: row wrap;
+
+    > .o-flex__item--auto {
+        flex: 1;
+    }
+}
+
+
+@mixin flex-setup($size, $breakpoint: 'global') {
+
+    $spacing: '';
+    $breakpoint-separator: \@ !default;
+
+
+    @if $breakpoint == 'global' {
+        $breakpoint-separator: '';
+        $breakpoint: '';
+    }
+
+
+    @if $size == 'xl' {
+        $spacing: $spacing-xl;
+    }
+
+    @if $size == 'lg' {
+        $spacing: $spacing-lg;
+    }
+
+    @if $size == 'md' {
+        $spacing: $spacing-md;
+    }
+
+    @if $size == 'sm' {
+        $spacing: $spacing-sm;
+    }
+
+    @if $size == 'xs' {
+        $spacing: $spacing-xs;
+    }
+
+    @if $size == 'none' {
+        $spacing: 0;
+    }
+
+    .o-flex--#{$size}#{$breakpoint-separator}#{$breakpoint} {
+        margin-left: (-$spacing/2);
+        margin-right: (-$spacing/2);
+
+        > .o-flex__item {
+            padding-left: ($spacing/2);
+            padding-right: ($spacing/2);
+        }
+    }
+}
+
+
+@include flex-setup('xl');
+@include flex-setup('lg');
+@include flex-setup('md');
+@include flex-setup('sm');
+@include flex-setup('xs');
